@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <header>
+      <nav class="navbar">
+        <a href="#hero" class="logo">SALAMI FAVOUR</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow">Hello, I am Favour Salami</p>
+        <h1>Frontend learner building clean web experiences.</h1>
+        <p class="hero-text">
+          I am learning HTML and CSS by building real projects, starting with this
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary-btn">View Projects</a>
+          <a href="#contact" class="btn secondary-btn">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/fav.png" alt="Portrait of favour" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I am a beginner web developer learning HTML and CSS by building real
+          building real projects.I ejoy turning ideas into simple, clean webpages and improving one step at a time.
+        </p>
+      </div>
+      <div class="about-highlight">
+        <p>Currently learning</p>
+        <strong>HTML, CSS, and responsive layouts</strong>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <p>
+        These are the web development skills i am currently learning and practicing.
+      </p>
+      <div class="skills-list">
+        <span class="skill-badge">HTML</span>
+        <span class="skill-badge">CSS</span>
+        <span class="skill-badge">Responsive design</span>
+        <span class="skill-badge">Flexbox</span>
+        <span class="skill-badge">Git Basics</span>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <h2>Projects</h2>
+        <p>
+          Here are some beginner projects i am building while learning HTML and CSS.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>portfolio website</h3>
+          <p>
+            A personal portfolio website built with semantic HTML, modern CSS, and responsive layout principles.
+          </p>
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Flexbox</span>
+          </div>
+          <div class="project-links">
+            <a href="#">live demo</a>
+            <a href="#">source code</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Landing page</h3>
+          <p>
+            A clean landing page layout created to practice spacing, visual hierrachy, buttons, and rusabke CSS classes.
+          </p>
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>design</span>
+          </div>
+          <div class="project-links">
+            <a href="#">live demo</a>
+            <a href="#">source code</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <h3>profile card</h3>
+          <p>
+            A small profile cad component built to practice borders, shadows, images, and card-based layouts.
+          </p>
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>cards</span>
+          </div>
+          <div class="project-links">
+            <a href="#">live demo</a>
+            <a href="#">source code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <div class="section-heading">
+        <h2>Contact Me</h2>
+        <p>
+          Have a question or want to connect? Send me a message and i will reply when i can.
+        </p>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="enter your email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="write your message" required></textarea>
+        </div>
+        <button type="submit" class="btn primary-btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Favour Oluwarantimi Salami. Built with HTML and CSS.</p>
+    <div class="footer-links">
+      <a href="#hero">Back to top</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+</body>
+
+</html>
