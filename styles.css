@@ -15,6 +15,8 @@
   --soft-blue: #eef2ff;
   --radius: 18px;
   --shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: ease;
 }
 
 html {
@@ -78,6 +80,25 @@ footer {
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.2s var(--ease-out);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .hero {
@@ -89,12 +110,18 @@ footer {
 .hero-image {
   width: 100%;
   clip-path: circle(60%);
+  transition: transform 0.3s ease;
+  animation: fadeSlideUp 0.7s var(--ease-out) 0.15s both, float 5s ease-in-out 1s infinite;
 }
 
 .hero-image img,
 .image-placeholder {
   max-width: 280px;
   width: 100%;
+}
+
+.hero-image:hover {
+  transform: rotate(1.5deg) scale(1.02);
 }
 
 .eyebrow {
@@ -136,6 +163,7 @@ p {
   text-decoration: none;
   font-weight: 700;
   text-align: center;
+  transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-soft);
 }
 
 .primary-btn {
@@ -223,6 +251,26 @@ footer {
   padding: 10px 16px;
   color: var(--text);
   font-weight: 700;
+  transition: transform 0.2s ease,
+    border-color 0.2s ease;
+  animation: scaleIn 0.4s var(--ease-out) both;
+}
+
+.skill-badge:hover {
+  transform: translate(-3px) scale(1.03);
+  border-color: var(--primary);
+}
+
+.skill-badge:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.skill-badge:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.skill-badge:nth-child(3) {
+  animation-delay: 0.15s;
 }
 
 .skills-list {
@@ -306,12 +354,25 @@ footer {
   border-radius: var(--radius);
   padding: 24px;
   box-shadow: var(--shadow);
-  transition: transform 0.2sec ease, box-shadow 0.2sec ease;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  animation: fadeSlideUp 0.6s var(--ease-out) both;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 50px rgba(15, 23, 42, 0.14);
+}
+
+.project-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.project-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.project-card:nth-child(3) {
+  animation-delay: 0.25s;
 }
 
 .project-card h3 {
@@ -423,11 +484,13 @@ textarea:focus {
 
 .primary-btn:hover {
   background-color: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
 .secondary-btn:hover {
   background-color: var(--primary);
   color: white;
+  transform: translateY(-2px);
 }
 
 a,
@@ -460,4 +523,83 @@ textarea:focus {
   color: var(--muted);
   font-weight: 700;
   text-decoration: none;
+}
+
+.btn,
+.nav-links a,
+.footer-links a,
+.project-card,
+input,
+textarea {
+  transition: color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid rgba(37, 99, 235, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeSlideUp 0.7s var(--ease-out) both;
+}
+
+.animate-in {
+  animation: fadeSlideUp 0.6s var(--ease-out) both;
+}
+
+.flip-card {
+  width: 280px;
+  height: 220px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s var(--ease-out);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  background-color: var(--surface);
+  border: 1 px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.project-card,
+.btn {
+  will-change: transform;
 }
