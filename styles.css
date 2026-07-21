@@ -485,6 +485,7 @@ textarea:focus {
 .primary-btn:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
+
 }
 
 .secondary-btn:hover {
@@ -602,4 +603,65 @@ textarea:focus {
 .project-card,
 .btn {
   will-change: transform;
+}
+
+.dark-theme {
+  --bg: #0f172a;
+  --surface: #111827;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --border: #334155;
+  --soft-blue: #1e293b;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+}
+
+.project-filters {
+  background-color: rgba(244, 232, 232, 0.148);
+  border-radius: 15PX;
+  padding: 8px;
+}
+
+.project-filters button {
+  border: 1px splid var(--primary);
+  background-color: rgb(92, 154, 230);
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #eef2ff;
+  margin: 10px;
 }

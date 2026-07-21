@@ -1,0 +1,18 @@
+.dark-theme {
+    --bg: #0f172a;
+    --surface: #111827;
+    --text: #f8fafc;
+    --muted: #cbd5e1;
+    --border: #334155;
+    --soft-blue: #1e293b;
+}
+
+.theme-toggle {
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
